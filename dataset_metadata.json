@@ -1,0 +1,67 @@
+{
+  "project_name": "Indian Food Recognizer & Calorie Estimator",
+  "dataset_source": "rajistics/indian_food_images",
+  "dataset_source_url": "https://huggingface.co/datasets/rajistics/indian_food_images",
+  "created_utc": "2026-10-18T08:34:38.925693+00:00",
+  "files": {
+    "train.parquet": {
+      "records": 4125,
+      "purpose": "Model training"
+    },
+    "validation.parquet": {
+      "records": 1032,
+      "purpose": "Model validation and tuning"
+    },
+    "test.parquet": {
+      "records": 941,
+      "purpose": "Final evaluation only"
+    }
+  },
+  "columns": {
+    "image": "Image dictionary containing image bytes",
+    "label": "Integer food-class label"
+  },
+  "class_mapping": {
+    "0": "burger",
+    "1": "butter_naan",
+    "2": "chai",
+    "3": "chapati",
+    "4": "chole_bhature",
+    "5": "dal_makhani",
+    "6": "dhokla",
+    "7": "fried_rice",
+    "8": "idli",
+    "9": "jalebi",
+    "10": "kaathi_rolls",
+    "11": "kadai_paneer",
+    "12": "kulfi",
+    "13": "masala_dosa",
+    "14": "momos",
+    "15": "paani_puri",
+    "16": "pakode",
+    "17": "pav_bhaji",
+    "18": "pizza",
+    "19": "samosa"
+  },
+  "split_configuration": {
+    "method": "Stratified split",
+    "stratification_column": "label",
+    "validation_fraction": 0.2,
+    "random_seed": 42,
+    "training_records": 4125,
+    "validation_records": 1032,
+    "test_records": 941,
+    "test_used_for_validation": false
+  },
+  "exclusions": {
+    "precautionary_training_records_excluded": 171,
+    "note": "Flagged records were excluded as a precaution; not all are confirmed duplicates or label errors."
+  },
+  "duplicate_checks": {
+    "exact_hash_matches_between_training_validation": 0,
+    "known_phash_candidate_pairs_crossing_training_validation": 0,
+    "limitation": "The perceptual-hash check covered the 99 previously identified candidate pairs only."
+  },
+  "original_parquet_files_modified": false,
+  "test_set_modified": false
+}
